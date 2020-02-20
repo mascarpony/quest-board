@@ -16,7 +16,7 @@ For now we have app with quests board and form for creating new quests. But hero
 - Accepted quests shouldn't be shown at the quests board
 - Add button `My quests` to the header. It should lead to `/my-quests` page. Show here the list of accepted quests without any buttons
 
-## If you a bored
+## If you are bored
 
 - Add backend errors handling
 - Make form more user-friendly
