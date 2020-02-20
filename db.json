@@ -1,0 +1,38 @@
+{
+  "quests": [
+    {
+      "id": 0,
+      "title": "Save the Princess",
+      "description": "She is in tower in The Sims, and the door is deleted.",
+      "customer": "Maritza Tate",
+      "complexity": 2,
+      "reward": [
+        "30$",
+        "her endless love"
+      ]
+    },
+    {
+      "id": 1,
+      "title": "Defeat the Dragon",
+      "description": "He is an ice-dragon now and the best that we can do is to make him rest in peace.",
+      "customer": "Dany",
+      "complexity": 4,
+      "reward": [
+        "3000$",
+        "peace in 7 kingdoms"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Learn the Angular",
+      "description": "It can be helpful",
+      "customer": "Well-wisher",
+      "complexity": 3,
+      "reward": [
+        "you'll learn some interesting new staff",
+        "project in Angular (probably)",
+        "respect from other devs (probably)"
+      ]
+    }
+  ]
+}

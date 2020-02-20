@@ -1,0 +1,11 @@
+<mat-card class="quest">
+  <h3 class="quest__title">{{quest.title}}</h3>
+  <p class="quest__description">{{quest.description}}</p>
+  <p class="quest__customer">- {{quest.customer}}</p>
+  <p class="quest__complexity">
+    <mat-icon *ngFor="let idx of quest.complexity | numberToArray">star</mat-icon>
+  </p>
+  <ul class="quest__reward-list">
+    <li *ngFor="let rewardItem of quest.reward" class="quest__reward">{{rewardItem}}</li>
+  </ul>
+</mat-card>

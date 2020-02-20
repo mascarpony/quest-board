@@ -1,0 +1,25 @@
+<form [formGroup]="questForm" (ngSubmit)="onSubmit()" class="quest-form">
+  <mat-form-field>
+    <mat-label>Title</mat-label>
+    <input matInput formControlName="title">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Description</mat-label>
+    <textarea matInput formControlName="description"></textarea>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>From who?</mat-label>
+    <input matInput formControlName="customer">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Complexity</mat-label>
+    <mat-select formControlName="complexity">
+      <mat-option *ngFor="let i of 5 | numberToArray" [value]="i">{{i}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Reward</mat-label>
+    <input matInput formControlName="reward">
+  </mat-form-field>
+  <button mat-button type="submit" [disabled]="!questForm.valid">Submit</button>
+</form>

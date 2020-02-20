@@ -1,0 +1,12 @@
+.quest {
+  font-family: 'Covered By Your Grace', cursive;
+  font-size: 1.3em;
+
+  &__title {
+    text-align: center;
+  }
+
+  &__customer {
+    text-align: end;
+  }
+}
