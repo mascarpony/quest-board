@@ -1,27 +1,35 @@
-# QuestBoard
+# Quest Board
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.19.
+Second quest for the hero is to add new feature in existing project. Ready. Steady. GO!
 
-## Development server
+## Running the App
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Install [json-server](https://www.npmjs.com/package/json-server) and run `json-server --watch db.json`.
+Run `ng serve` as usual.
 
-## Code scaffolding
+## Requirements
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+For now we have app with quests board and form for creating new quests. But heroes should have opportunity to accept the quests, that's why we need you!
 
-## Build
+- Add `Accept` button to each quest
+- On click status of the quest should be changed to accepted (at both frontend and backend)
+- Accepted quests shouldn't be shown at the quests board
+- Add button `My quests` to the header. It should lead to `/my-quests` page. Show here the list of accepted quests without any buttons
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## If you a bored
 
-## Running unit tests
+- Add backend errors handling
+- Make form more user-friendly
+- Extend the quests workflow. For example, you may make `done` and `declined` statuses for quests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Hints
 
-## Running end-to-end tests
+- Use existing quest component for `My quests` page
+- You can edit backend data directly in `db.json` file
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+## Useful API
 
-## Further help
+To update the whole quest use PUT request to `http://localhost:3000/quests/:id` with updated quest object in the body. In response you'll get updated quest.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+To add/update one field in quest use PATCH request to `http://localhost:3000/quests/:id` with updating field in the body. In response you'll get updated quest.
+
