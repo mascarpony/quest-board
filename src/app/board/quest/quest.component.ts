@@ -10,16 +10,35 @@ import { QuestService } from 'src/app/shared/quest.service';
 export class QuestComponent {
   @Input() quest: IQuest;
 
+  public isLoading: boolean = false;
+
   constructor(
     private questService: QuestService
   ) {}
 
   public acceptQuest(): void {
+    this.isLoading = true;
     const acceptedQuest = {
       ...this.quest,
       isAccepted: true,
     };
-    this.questService.acceptQuest(acceptedQuest)
-      .subscribe(() => undefined);
+    this.questService.updateQuest(acceptedQuest)
+      .subscribe(
+        () => this.isLoading = false,
+        () => this.isLoading = false,
+      );
+    }
+    
+    public declineQuest(): void {
+    this.isLoading = true;
+    const declinedQuest = {
+      ...this.quest,
+      isAccepted: false,
+    };
+    this.questService.updateQuest(declinedQuest)
+      .subscribe(
+        () => this.isLoading = false,
+        () => this.isLoading = false,
+      );
   }
 }

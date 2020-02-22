@@ -11,6 +11,8 @@ import { Subscription } from 'rxjs';
 export class QuestsBoardComponent implements OnInit, OnDestroy {
   quests: IQuest[] = [];
 
+  public isThereQuests: boolean = false;
+
   private subscription: Subscription;
 
   constructor(private questService: QuestService) { }
@@ -20,6 +22,7 @@ export class QuestsBoardComponent implements OnInit, OnDestroy {
       .subscribe(quests => {
         if (quests && quests.length) {
           this.quests = this.unacceptedQuests(quests);
+          this.isThereQuests = this.quests.length > 0;
         }
       })
   }
