@@ -1,12 +1,30 @@
+p {
+  margin: 0;
+}
+
 .quest {
   font-family: 'Covered By Your Grace', cursive;
   font-size: 1.3em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 350px;
+  position: relative;
 
   &__title {
     text-align: center;
   }
 
-  &__customer {
+  &__reward-list {
+    min-height: 85px;
+  }
+
+}
+
+.description {
+  min-height: 85px;
+
+  &__author {
     text-align: end;
   }
 }

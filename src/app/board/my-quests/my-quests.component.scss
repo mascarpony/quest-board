@@ -1,0 +1,11 @@
+.quests {
+    &__container {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  
+    &__item {
+      margin: 10px;
+    }
+}
+  

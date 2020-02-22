@@ -30,4 +30,14 @@ export class QuestService {
         this.quests.next(updatedQuests);
       }));
   }
+
+  acceptQuest(acceptedQuest: IQuest): Observable<IQuest> {
+    return this.http
+      .put<IQuest>(`${BASIC_URL}/${acceptedQuest.id}`, acceptedQuest)
+      .pipe(tap(updatedQuest => {
+        const updatedQuests = this.quests.getValue()
+          .map(quest => quest.id === updatedQuest.id ? acceptedQuest : quest);
+        this.quests.next(updatedQuests);
+      }));
+  }
 }
