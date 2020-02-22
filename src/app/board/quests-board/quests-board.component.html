@@ -1,4 +1,16 @@
-<h2>Hey, Hero! There are some quests for you</h2>
-<div class="quests__container">
-  <app-quest *ngFor="let quest of quests" [quest]="quest" class="quests__item"></app-quest>
+<div class="quests">  
+  <h1 *ngIf="isThereQuests; else noQuests">
+    Hey, Hero! There are some quests for you
+  </h1>
+  <ng-template #noQuests>
+    <h1>
+      Hey, Hero! There are no quests for you
+    </h1>
+  </ng-template>
+  <div class="quests__container">
+    <app-quest *ngFor="let quest of quests"
+      [quest]="quest"
+      class="quests__item">
+    </app-quest>
+  </div>
 </div>

@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { IQuest } from './quest';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { take, tap } from 'rxjs/operators';
+import { take, tap, delay } from 'rxjs/operators';
 
 const BASIC_URL = 'http://localhost:3000/quests';
 
@@ -29,5 +29,18 @@ export class QuestService {
         const updatedQuests = [...this.quests.getValue(), newQuest];
         this.quests.next(updatedQuests);
       }));
+  }
+
+  updateQuest(updatedQuest: IQuest): Observable<IQuest> {
+    return this.http
+      .put<IQuest>(`${BASIC_URL}/${updatedQuest.id}`, updatedQuest)
+      .pipe(
+        delay(1000),
+        tap(updatedQuest => {
+          const updatedQuests = this.quests.getValue()
+            .map(quest => quest.id === updatedQuest.id ? updatedQuest : quest);
+          this.quests.next(updatedQuests);
+        })
+      );
   }
 }
