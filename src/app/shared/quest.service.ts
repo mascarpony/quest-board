@@ -31,12 +31,19 @@ export class QuestService {
       }));
   }
 
-  acceptQuest(acceptedQuest: IQuest): Observable<IQuest> {
+  acceptQuest(id: number): Observable<IQuest> {
+    const acception = {
+      isAccepted: true,
+    };
+
     return this.http
-      .patch<IQuest>(`${BASIC_URL}/${acceptedQuest.id}`, acceptedQuest)
+      .patch<IQuest>(`${BASIC_URL}/${id}`, acception)
       .pipe(tap(newQuest => {
         const newQuests = this.quests.getValue()
-          .map(quest => quest.id === newQuest.id ? acceptedQuest : quest);
+          .map(quest => quest.id === newQuest.id ? {
+            ...quest,
+            ...acception
+          } : quest);
         this.quests.next(newQuests);
       }));
   }

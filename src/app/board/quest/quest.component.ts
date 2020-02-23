@@ -15,12 +15,7 @@ export class QuestComponent {
   ) { }
 
   public accept(): void {
-    const acceptedQuest = {
-      ...this.quest,
-      isAccepted: true,
-    };
-
-    this.questService.acceptQuest(acceptedQuest)
+    this.questService.acceptQuest(this.quest.id)
       .subscribe(() => undefined);
   }
 }
