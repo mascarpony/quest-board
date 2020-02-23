@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { BoardModule } from './board/board.module';
 import { AddQuestModule } from './add-quest/add-quest.module';
-import { MyQuestsModule } from './my-quests/my-quests.module';
 import { HttpClientModule } from '@angular/common/http';
 import { SharedModule } from './shared/shared.module';
 
@@ -21,7 +20,6 @@ import { SharedModule } from './shared/shared.module';
     SharedModule,
     BoardModule,
     AddQuestModule,
-    MyQuestsModule,
     AppRoutingModule,
   ],
   providers: [],

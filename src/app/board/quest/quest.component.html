@@ -8,5 +8,5 @@
   <ul class="quest__reward-list">
     <li *ngFor="let rewardItem of quest.reward" class="quest__reward">{{rewardItem}}</li>
   </ul>
-  <button (click)="accept()">Accept</button>
+  <button *ngIf="!quest.isAccepted" mat-stroked-button color="primary" class="quest__btn" (click)="accept()">Accept</button>
 </mat-card>
