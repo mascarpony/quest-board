@@ -10,6 +10,7 @@ import {
   MatSelectModule,
   MatToolbarModule
 } from '@angular/material';
+import { FilterPipe } from './pipes/filter.pipe';
 
 const MAT_MODULES = [
   MatCardModule,
@@ -22,11 +23,12 @@ const MAT_MODULES = [
 ];
 
 @NgModule({
-  declarations: [NumberToArrayPipe],
+  declarations: [NumberToArrayPipe, FilterPipe],
   imports: [...MAT_MODULES],
   exports: [
     NumberToArrayPipe,
-    ...MAT_MODULES
+    ...MAT_MODULES,
+    FilterPipe
   ]
 })
 export class SharedModule { }
