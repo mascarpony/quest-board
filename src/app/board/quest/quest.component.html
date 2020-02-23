@@ -1,4 +1,4 @@
-<mat-card class="quest">
+<mat-card class="quest" [ngClass]="{accepted: quest.isAccepted, fetching: isFetching}">
   <h3 class="quest__title">{{quest.title}}</h3>
   <p class="quest__description">{{quest.description}}</p>
   <p class="quest__customer">- {{quest.customer}}</p>
@@ -8,4 +8,25 @@
   <ul class="quest__reward-list">
     <li *ngFor="let rewardItem of quest.reward" class="quest__reward">{{rewardItem}}</li>
   </ul>
+  <div class="quest__actions">
+    <button
+      *ngIf="!quest.isAccepted"
+      mat-raised-button
+      color="accent"
+      (click)="toggleQuest(true)"
+    >
+      Accept
+    </button>
+    <button
+      *ngIf="quest.isAccepted"
+      mat-raised-button
+      color="primary"
+      (click)="toggleQuest(false)"
+    >
+      Decline
+    </button>
+  </div>
+  <div class="loader-substrate">
+    <mat-spinner></mat-spinner>
+  </div>
 </mat-card>

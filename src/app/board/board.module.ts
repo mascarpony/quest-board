@@ -13,6 +13,7 @@ import { SharedModule } from '../shared/shared.module';
     CommonModule,
     BoardRoutingModule,
     SharedModule,
-  ]
+  ],
+  exports: [QuestComponent]
 })
 export class BoardModule { }

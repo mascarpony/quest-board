@@ -1,11 +1,16 @@
-import { TestBed } from '@angular/core/testing';
-
+import { async, TestBed } from '@angular/core/testing';
 import { QuestService } from './quest.service';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 describe('QuestService', () => {
-  beforeEach(() => TestBed.configureTestingModule({}));
+  beforeEach(async(() => {
+    TestBed.configureTestingModule({
+      imports: [ HttpClientTestingModule ]
+    })
+    .compileComponents();
+  }));
 
-  it('should be created', () => {
+  it('QuestService should be created', () => {
     const service: QuestService = TestBed.get(QuestService);
     expect(service).toBeTruthy();
   });
