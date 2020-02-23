@@ -3,17 +3,17 @@ import { QuestService } from '../../shared/quest.service';
 import { IQuest } from '../../shared/quest';
 
 @Component({
-  selector: 'app-quests-board',
-  templateUrl: './quests-board.component.html',
-  styleUrls: ['./quests-board.component.scss']
+  selector: 'app-my-quests',
+  templateUrl: './my-quests.component.html',
+  styleUrls: ['./my-quests.component.scss']
 })
-export class QuestsBoardComponent implements OnInit {
+export class MyQuestsComponent implements OnInit {
   quests: IQuest[] = [];
 
   constructor(private questService: QuestService) { }
 
   ngOnInit() {
-    this.questService.getAvailableQuests()
+    this.questService.getAcceptedQuests()
       .subscribe(quests => {
         if (quests && quests.length) {
           this.quests = quests;
