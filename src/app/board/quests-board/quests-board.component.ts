@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { QuestService } from '../../shared/quest.service';
 import { IQuest } from '../../shared/quest';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-quests-board',
@@ -9,10 +10,16 @@ import { IQuest } from '../../shared/quest';
 })
 export class QuestsBoardComponent implements OnInit {
   quests: IQuest[] = [];
-
-  constructor(private questService: QuestService) { }
+  filter: string = '!accepted';
+  constructor(
+    private questService: QuestService,
+    private location: Location,
+  ) {this.location = location }
 
   ngOnInit() {
+    if(this.location.path() === '/my-quests') {
+      this.filter = 'accepted'
+    };
     this.questService.getQuests()
       .subscribe(quests => {
         if (quests && quests.length) {

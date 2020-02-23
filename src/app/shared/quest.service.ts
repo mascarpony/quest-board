@@ -30,4 +30,10 @@ export class QuestService {
         this.quests.next(updatedQuests);
       }));
   }
+
+  updateQuest(quest: IQuest): Observable<IQuest> {
+    return this.http
+      .put<IQuest>(`${BASIC_URL}/${quest.id}`, quest);
+  }
+
 }
