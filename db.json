@@ -20,7 +20,8 @@
       "reward": [
         "3000$",
         "peace in 7 kingdoms"
-      ]
+      ],
+      "isAccepted": true
     },
     {
       "id": 2,
@@ -33,6 +34,17 @@
         "project in Angular (probably)",
         "respect from other devs (probably)"
       ]
+    },
+    {
+      "title": "Say hi",
+      "description": "Smth",
+      "customer": "Me",
+      "complexity": 5,
+      "reward": [
+        "Hi"
+      ],
+      "id": 3,
+      "isAccepted": true
     }
   ]
 }
