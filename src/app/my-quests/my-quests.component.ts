@@ -16,7 +16,7 @@ export class MyQuestsComponent implements OnInit {
     this.questService.getQuests()
       .subscribe(quests => {
         if (quests && quests.length) {
-          this.quests = quests.filter((value) => value.accepted);
+          this.quests = quests.filter((value) => value.isAccepted);
         }
       });
   }

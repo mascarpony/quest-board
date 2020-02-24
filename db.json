@@ -10,7 +10,7 @@
         "30$",
         "her endless love"
       ],
-      "accepted": false
+      "isAccepted": false
     },
     {
       "id": 1,
@@ -22,7 +22,7 @@
         "3000$",
         "peace in 7 kingdoms"
       ],
-      "accepted": false
+      "isAccepted": false
     },
     {
       "id": 2,
@@ -35,7 +35,7 @@
         "project in Angular (probably)",
         "respect from other devs (probably)"
       ],
-      "accepted": false
+      "isAccepted": false
     }
   ]
 }

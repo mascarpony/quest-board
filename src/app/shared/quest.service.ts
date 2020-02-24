@@ -33,7 +33,7 @@ export class QuestService {
 
   acceptQuest(id: number): Observable<IQuest> {
     const acception = {
-      accepted: true
+      isAccepted: true
     };
 
     return this.http

@@ -5,7 +5,7 @@ export interface IQuest {
   customer: string;
   complexity: Complexity;
   reward: string[];
-  accepted?: boolean;
+  isAccepted?: boolean;
 }
 
 type Complexity = 1 | 2 | 3 | 4 | 5;
