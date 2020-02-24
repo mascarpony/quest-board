@@ -23,7 +23,7 @@ export class QuestFormComponent {
 
   onSubmit() {
     const reward = this.questForm.value.reward.split(',').map(item => item.trim());
-    this.questService.addQuest({...this.questForm.value, reward})
+    this.questService.addQuest({...this.questForm.value, reward, isAccepted: false})
       .subscribe(res => {
         console.log(res);
         this.questForm.reset();
