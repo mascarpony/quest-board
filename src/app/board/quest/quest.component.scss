@@ -9,4 +9,14 @@
   &__customer {
     text-align: end;
   }
+
+  &__button {
+    font-family: 'Covered By Your Grace', cursive;
+    font-size: 1em;
+    border: 2px double black;
+    border-radius: 10px;
+    width: 80px;
+    height: 30px;
+    float: right;
+ }
 }
