@@ -1,12 +1,50 @@
 .quest {
   font-family: 'Covered By Your Grace', cursive;
   font-size: 1.3em;
+  position: relative;
+  z-index: 10;
+  overflow: hidden;
 
   &__title {
     text-align: center;
+    padding-bottom: 5px;
+    border-bottom: 2px solid black;
   }
 
   &__customer {
     text-align: end;
+  }
+
+  &__accepted::before {
+    content: "accepted";
+    position: absolute;
+    display: block;
+    top: 45%;
+    left: 30%;
+    color: rgba(0,250,10);
+    opacity: 0.4;
+    font-size: 2.2em;
+    transform: rotate(-35deg);
+    z-index: 1;
+  }
+
+  &__button {
+    display: flex;
+    margin: 0 auto;
+    background-color: transparent;
+    border: 2px solid black;
+    font-family: 'Covered By Your Grace', cursive;
+    font-size: 22px;
+    color: black;
+    padding: 5px 15px;
+
+    &:hover {
+      background-color: rgba(0,150,10,0.2);
+    }
+
+    &:active {
+      opacity: 0.8;
+      box-shadow: 0 0 4px rgba(0,150,10);
+    }
   }
 }

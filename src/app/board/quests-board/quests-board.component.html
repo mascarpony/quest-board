@@ -1,4 +1,5 @@
-<h2>Hey, Hero! There are some quests for you</h2>
+<h2 *ngIf='!questsType'>Hey, Hero! There are some quests for you</h2>
+<h2 *ngIf='questsType'>There are your accepted quests. Come on, tough guy!</h2>
 <div class="quests__container">
   <app-quest *ngFor="let quest of quests" [quest]="quest" class="quests__item"></app-quest>
 </div>

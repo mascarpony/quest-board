@@ -6,6 +6,10 @@ import { QuestsBoardComponent } from './quests-board/quests-board.component';
 const routes: Routes = [{
   path: 'board',
   component: QuestsBoardComponent,
+},
+{
+  path: 'my-quests',
+  component: QuestsBoardComponent,
 }];
 
 @NgModule({

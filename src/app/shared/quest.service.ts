@@ -22,6 +22,17 @@ export class QuestService {
     return this.quests.asObservable();
   }
 
+  acceptQuest(quest: IQuest) {
+    return this.http.patch<IQuest>(BASIC_URL + '/' + quest.id, quest)
+    .pipe(tap(acceptedQuest => {
+        const updatedQuests = this.quests.getValue().map(quest => {
+          return quest.id === acceptedQuest.id ? acceptedQuest : quest;
+        });
+        this.quests.next(updatedQuests);
+      })
+    ).subscribe();
+  }
+
   addQuest(quest: IQuest): Observable<IQuest> {
     return this.http
       .post<IQuest>(BASIC_URL, quest)
