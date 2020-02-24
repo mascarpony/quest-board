@@ -12,9 +12,9 @@ Run `ng serve` as usual.
 For now we have app with quests board and form for creating new quests. But heroes should have opportunity to accept the quests, that's why we need you!
 
 - Add `Accept` button to each quest
-- On click status of the quest should be changed to isAccepted (at both frontend and backend)
-- isAccepted quests shouldn't be shown at the quests board
-- Add button `My quests` to the header. It should lead to `/my-quests` page. Show here the list of isAccepted quests without any buttons
+- On click status of the quest should be changed to accepted (at both frontend and backend)
+- Accepted quests shouldn't be shown at the quests board
+- Add button `My quests` to the header. It should lead to `/my-quests` page. Show here the list of accepted quests without any buttons
 
 ## If you are bored
 
