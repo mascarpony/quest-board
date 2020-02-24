@@ -4,8 +4,7 @@ Second quest for the hero is to add new feature in existing project. Ready. Stea
 
 ## Running the App
 
-Install [json-server](https://www.npmjs.com/package/json-server) and run `json-server --watch db.json`.
-Run `ng serve` as usual.
+Run `npm start`.
 
 ## Requirements
 
