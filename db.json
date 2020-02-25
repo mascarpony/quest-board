@@ -9,7 +9,8 @@
       "reward": [
         "30$",
         "her endless love"
-      ]
+      ],
+      "isAccepted": true
     },
     {
       "id": 1,
@@ -20,7 +21,8 @@
       "reward": [
         "3000$",
         "peace in 7 kingdoms"
-      ]
+      ],
+      "isAccepted": true
     },
     {
       "id": 2,
@@ -32,7 +34,52 @@
         "you'll learn some interesting new staff",
         "project in Angular (probably)",
         "respect from other devs (probably)"
-      ]
+      ],
+      "isAccepted": true
+    },
+    {
+      "title": "g",
+      "description": "fg",
+      "customer": "f",
+      "complexity": 1,
+      "reward": [
+        "f"
+      ],
+      "isAccepted": true,
+      "id": 3
+    },
+    {
+      "title": "lol ",
+      "description": "k k",
+      "customer": "mkmk ",
+      "complexity": 1,
+      "reward": [
+        "f knf"
+      ],
+      "isAccepted": true,
+      "id": 4
+    },
+    {
+      "title": "c",
+      "description": "c",
+      "customer": "c",
+      "complexity": 1,
+      "reward": [
+        "c"
+      ],
+      "isAccepted": true,
+      "id": 5
+    },
+    {
+      "title": "d",
+      "description": "df",
+      "customer": "d",
+      "complexity": 3,
+      "reward": [
+        "d"
+      ],
+      "isAccepted": false,
+      "id": 6
     }
   ]
 }

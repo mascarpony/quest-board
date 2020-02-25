@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { QuestService } from "../../shared/quest.service";
 import { IQuest } from '../../shared/quest';
 
 @Component({
@@ -8,4 +9,10 @@ import { IQuest } from '../../shared/quest';
 })
 export class QuestComponent {
   @Input() quest: IQuest;
+
+  constructor(private questService: QuestService) {}
+
+  completeQuest():void {
+    this.questService.completeQuest(this.quest.id).subscribe(() => null);
+  }
 }

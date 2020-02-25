@@ -7,6 +7,7 @@ import { QuestService } from '../../shared/quest.service';
   templateUrl: './quest-form.component.html',
   styleUrls: ['./quest-form.component.scss']
 })
+
 export class QuestFormComponent {
   questForm = this.fb.group({
     title: ['', Validators.required],
@@ -23,9 +24,8 @@ export class QuestFormComponent {
 
   onSubmit() {
     const reward = this.questForm.value.reward.split(',').map(item => item.trim());
-    this.questService.addQuest({...this.questForm.value, reward})
-      .subscribe(res => {
-        console.log(res);
+    this.questService.addQuest({...this.questForm.value, reward, isAccepted: false})
+      .subscribe(responce => {
         this.questForm.reset();
       });
   }

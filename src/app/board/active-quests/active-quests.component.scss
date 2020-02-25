@@ -1,0 +1,14 @@
+.quest-list__item {
+  outline: 3px solid rgb(134, 10, 10);
+  margin-bottom: 40px;
+}
+
+.quests__container {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.quests__title {
+  text-align: center;
+}
