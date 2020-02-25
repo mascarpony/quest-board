@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { QuestService } from '../../shared/quest.service';
 import { IQuest } from '../../shared/quest';
+import { ActivatedRoute } from '@angular/router';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-quests-board',
@@ -10,15 +12,20 @@ import { IQuest } from '../../shared/quest';
 export class QuestsBoardComponent implements OnInit {
   quests: IQuest[] = [];
 
-  constructor(private questService: QuestService) { }
+  constructor(
+    private questService: QuestService,
+    private route: ActivatedRoute
+  ) {}
 
   ngOnInit() {
-    this.questService.getQuests()
-      .subscribe(quests => {
+    this.route.data.subscribe(data => {
+      this.questService.getQuests().subscribe(quests => {
         if (quests && quests.length) {
-          this.quests = quests;
+          this.quests = quests.filter(quest =>
+            data.onlyAccepted ? quest.isAccepted : !quest.isAccepted
+          );
         }
       });
+    });
   }
-
 }

@@ -9,4 +9,17 @@
   &__customer {
     text-align: end;
   }
+
+  &__accept-button{
+    font-family: 'Covered By Your Grace';
+    font-size: 1em;
+    padding: 0.3em;
+    border-radius: 5px;
+    border-color: black;
+    width: 100%;
+    transition: 0.3s;
+    &:hover{
+      background-color: #a8fd87;
+    }
+  }
 }

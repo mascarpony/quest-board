@@ -2,14 +2,21 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { QuestsBoardComponent } from './quests-board/quests-board.component';
 
-
-const routes: Routes = [{
-  path: 'board',
-  component: QuestsBoardComponent,
-}];
+const routes: Routes = [
+  {
+    path: 'board',
+    component: QuestsBoardComponent,
+    data: {onlyAccepted : false}
+  },
+  {
+    path: 'my-quests',
+    component: QuestsBoardComponent,
+    data: {onlyAccepted : true}
+  }
+];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class BoardRoutingModule { }
+export class BoardRoutingModule {}
