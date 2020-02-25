@@ -1,0 +1,14 @@
+
+<h3 *ngIf="activeQuests.length !== 0" class="quests__title">
+  MY ACCEPTED TASKS
+</h3>
+<h3 *ngIf="activeQuests.length == 0">
+  No active tasks for today
+</h3>
+<div *ngIf="activeQuests.length" class="quests__container">
+  <app-quest
+    class="quest-list__item"
+    *ngFor="let quest of activeQuests"
+    [(quest)]="quest"
+  ></app-quest>
+</div>
