@@ -9,7 +9,7 @@ import { IQuest } from '../../shared/quest';
 })
 export class MyQuestsComponent implements OnInit {
   quests: IQuest[] = [];
-  isAnyQuestsAccepted: boolean;
+  isNoQuestsAccepted: boolean;
 
   constructor(private questService: QuestService) { }
 
@@ -18,7 +18,7 @@ export class MyQuestsComponent implements OnInit {
       .subscribe(quests => {
         if (quests && quests.length) {
           this.quests = quests;
-          this.isAnyQuestsAccepted = quests.every(item => !item.isAccepted);
+          this.isNoQuestsAccepted = quests.every(item => !item.isAccepted);
         }
       });
   }
