@@ -1,0 +1,9 @@
+<h2>My Quests</h2>
+<h3 *ngIf="isNoQuestsAccepted">No upcoming quests. If you're brave go get it!</h3>
+<div class="quests__container">
+  <ng-container *ngFor="let quest of quests">
+    <ng-container *ngIf="quest.isAccepted">
+      <app-quest [quest]="quest" class="quests__item"></app-quest>
+    </ng-container>
+  </ng-container>
+</div>

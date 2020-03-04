@@ -1,12 +1,38 @@
 .quest {
+  position: relative;
   font-family: 'Covered By Your Grace', cursive;
   font-size: 1.3em;
+  color: #fff;
+  background-image: radial-gradient(rgba(95, 195, 32, 0.7), rgba(54, 158, 27, 0.7));
 
   &__title {
     text-align: center;
+    border-bottom: 2px dashed #fff;
   }
 
-  &__customer {
+  &__customer, &__actions {
     text-align: end;
   }
+}
+
+.accepted {
+  background-image: radial-gradient(rgba(232, 24, 24, 0.7), rgba(214, 75, 33, 0.7));
+}
+
+.fetching {
+  filter: blur(1px);
+  .loader-substrate {
+    display: flex;
+  }
+}
+
+.loader-substrate {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
 }

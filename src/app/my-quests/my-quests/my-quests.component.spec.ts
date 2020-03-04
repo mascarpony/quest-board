@@ -1,27 +1,27 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { QuestsBoardComponent } from './quests-board.component';
+import { MyQuestsComponent } from './my-quests.component';
 import { SharedModule } from '../../shared/shared.module';
 import { QuestComponent } from '../../board/quest/quest.component';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 
-describe('QuestsBoardComponent', () => {
-  let component: QuestsBoardComponent;
-  let fixture: ComponentFixture<QuestsBoardComponent>;
+describe('MyQuestsComponent', () => {
+  let component: MyQuestsComponent;
+  let fixture: ComponentFixture<MyQuestsComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [ SharedModule, HttpClientTestingModule ],
-      declarations: [ QuestsBoardComponent, QuestComponent ]
+      declarations: [ MyQuestsComponent, QuestComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(QuestsBoardComponent);
+    fixture = TestBed.createComponent(MyQuestsComponent);
     component = fixture.componentInstance;
   });
 
-  it('should create', () => {
+  it('MyQuestsComponent should create', () => {
     expect(component).toBeTruthy();
   });
 });

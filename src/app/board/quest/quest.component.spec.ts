@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { QuestComponent } from './quest.component';
+import { SharedModule } from '../../shared/shared.module';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 describe('QuestComponent', () => {
   let component: QuestComponent;
@@ -8,7 +9,8 @@ describe('QuestComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ QuestComponent ]
+      imports: [ SharedModule, HttpClientTestingModule ],
+      declarations: [ QuestComponent ],
     })
     .compileComponents();
   }));
@@ -16,10 +18,9 @@ describe('QuestComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(QuestComponent);
     component = fixture.componentInstance;
-    fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should create QuestComponent', () => {
     expect(component).toBeTruthy();
   });
 });

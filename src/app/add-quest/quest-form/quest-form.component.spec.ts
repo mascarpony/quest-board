@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { QuestFormComponent } from './quest-form.component';
+import { SharedModule } from '../../shared/shared.module';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 describe('QuestFormComponent', () => {
   let component: QuestFormComponent;
@@ -8,6 +10,7 @@ describe('QuestFormComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [ SharedModule, ReactiveFormsModule, HttpClientTestingModule ],
       declarations: [ QuestFormComponent ]
     })
     .compileComponents();
@@ -16,10 +19,9 @@ describe('QuestFormComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(QuestFormComponent);
     component = fixture.componentInstance;
-    fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should create QuestFormComponent', () => {
     expect(component).toBeTruthy();
   });
 });

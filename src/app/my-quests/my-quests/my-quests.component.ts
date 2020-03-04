@@ -4,12 +4,12 @@ import { IQuest } from '../../shared/quest';
 
 @Component({
   selector: 'app-quests-board',
-  templateUrl: './quests-board.component.html',
-  styleUrls: ['./quests-board.component.scss']
+  templateUrl: './my-quests.component.html',
+  styleUrls: ['./my-quests.component.scss']
 })
-export class QuestsBoardComponent implements OnInit {
+export class MyQuestsComponent implements OnInit {
   quests: IQuest[] = [];
-  isNewQuestsAvailable: boolean;
+  isNoQuestsAccepted: boolean;
 
   constructor(private questService: QuestService) { }
 
@@ -17,9 +17,9 @@ export class QuestsBoardComponent implements OnInit {
     this.questService.getQuests()
       .subscribe(quests => {
         if (quests && quests.length) {
-          this.quests = quests.filter(item => !item.isAccepted);
+          this.quests = quests;
+          this.isNoQuestsAccepted = quests.every(item => !item.isAccepted);
         }
       });
   }
-
 }
