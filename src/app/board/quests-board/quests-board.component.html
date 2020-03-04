@@ -6,8 +6,6 @@
 </ng-template>
 <div class="quests__container">
   <ng-container *ngFor="let quest of quests">
-    <ng-container *ngIf="!quest.isAccepted">
-      <app-quest [quest]="quest" class="quests__item"></app-quest>
-    </ng-container>
+    <app-quest [quest]="quest" class="quests__item"></app-quest>
   </ng-container>
 </div>
