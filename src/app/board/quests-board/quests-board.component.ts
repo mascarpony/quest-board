@@ -17,8 +17,7 @@ export class QuestsBoardComponent implements OnInit {
     this.questService.getQuests()
       .subscribe(quests => {
         if (quests && quests.length) {
-          this.quests = quests;
-          this.isNewQuestsAvailable = quests.some(item => !item.isAccepted);
+          this.quests = quests.filter(item => !item.isAccepted);
         }
       });
   }

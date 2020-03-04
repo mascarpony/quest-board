@@ -1,4 +1,4 @@
-<h2 *ngIf="isNewQuestsAvailable; else noQuests">Hey, Hero! There are some quests for you</h2>
+<h2 *ngIf="quests.length; else noQuests">Hey, Hero! There are some quests for you</h2>
 <ng-template #noQuests>
   <h2>
     It seems there are no more quests for you...
